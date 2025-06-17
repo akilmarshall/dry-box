@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/htmx.min.js"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <title>Dry Box</title>
+</head>
+<body>
+
+    <h2>Water Vapour in Air Volume (1 m³)</h2>
+    <form hx-get="/water-volume-mass" hx-target="next #water-volume-mass" hx-swap="innerHTML">
+        <label>Temperature
+            <input type="number" step="0.01" name="temperature" placeholder="Celsius">
+        </label>
+        <label>Humidity
+            <input
+                type="number"
+                step="0.01"
+                max="100"
+                min="0"
+                name="humidity"
+                placeholder="Relative Percent">
+        </label>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="water-volume-mass"></div>
+
+    <h2>Ideal Mass of Filament Length</h2> <form hx-get="/filament-mass" hx-target="next #filament-mass" hx-swap="innerHTML">
+        <fieldset>
+            <label>PLA
+                <input type="radio" name="material" value="PLA">
+            </label>
+            <label>PETG
+                <input type="radio" name="material" value="PETG">
+            </label>
+        </fieldset>
+        <label>Length
+            <input type="number" name="length" step="0.01" placeholder="Centimeter">
+        </label>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="filament-mass"></div>
+
+</body>
+</html>

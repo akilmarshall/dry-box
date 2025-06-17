@@ -1,0 +1,13 @@
+<div id="answer">
+    <p>
+        {{ "%.2f" | format(mass) }}
+        <em>grams</em>
+    </p>
+    <div>
+        <form hx-get="/filament-water" hx-include="#">
+            <label>Actual gram mass
+            <input type="number" step="0.001"</label>
+        </form>
+        <button type="submit">Calculate</button>
+    </div>
+</div>
