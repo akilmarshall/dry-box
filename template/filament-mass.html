@@ -1,13 +1,12 @@
 <div id="answer">
-    <p>
-        {{ "%.2f" | format(mass) }}
-        <em>grams</em>
-    </p>
+    <p>{{ "%.2f" | format(mass) }} <em>g</em></p>
     <div>
-        <form hx-get="/filament-water" hx-include="#">
+        <h2>Water Content in Filament</h2>
+        <form hx-get="/filament-water?ideal={{ mass }}" hx-target="#filament-water" hx-swap="innerHTML">
             <label>Actual gram mass
-            <input type="number" step="0.001"</label>
+            <input type="number" step="0.001" name="actual"</label>
+            <button type="submit">Calculate Water Content</button>
         </form>
-        <button type="submit">Calculate</button>
+        <div id="filament-water"></div>
     </div>
 </div>

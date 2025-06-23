@@ -59,4 +59,10 @@ def filament_mass(length: float, material: str):
 @app.get('/filament-water', response_class=HTMLResponse)
 def water_content_in_filament(ideal: float, actual: float):
     template = env.get_template('filament-water.html')
-    pass
+
+    percent = (actual / ideal) - 1
+
+    sample = (actual - ideal) * 1000
+    whole = 1000 * percent
+
+    return template.render(percent=100 * percent, sample=sample, whole=whole)
