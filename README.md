@@ -37,8 +37,10 @@ All of these devices are controlled together with a PID controller to control th
 # Wish List
 
 - external environment sensor
-- power mosfets or suitable device to control fan heat and bed heat with a pwm signal
-- second fan diagonal opposite the existing intake fan
-- use full H-bridge to control intake fan
+- power mosfets or suitable solid state device to control fan heat and bed heat with a pwm signal
+- second intake fan
+- use full H-bridge to control intake fan:
+    - bi-directional airflow control
 - hot bed temperature sensor
 - lid open/close sensor
+- insulated box
