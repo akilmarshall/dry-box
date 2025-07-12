@@ -84,13 +84,26 @@ A practical next step with components on hand, upgrading the capabilities of the
 ## Components
 
 - INA219:
-    - use 2, for heat bed and fan heater
     - limited by available address
     - current sensor
-    - 1 per i2c bus
-    - configure address to 0x41
+    - 3 available addresses per i2c bus:
+        - 0x41
+        - 0x44
+        - 0x45
+    - monitor:
+        - fan heater
+        - bed heater
+        - fan
 - reed switch:
     - lid position sensor
 - HTU21X:
     - create second i2c bus
     - external environmental sensor
+- Use the existing L298N as a full H-bridge 
+- TIP120 power Darlington transistor:
+    - 5A collector current (8A peak)
+    - use as a PWM power switch(https://www.allaboutcircuits.com/textbook/semiconductors/chpt-4/bjt-quirks/):
+        - fan heater:
+            - use 2
+        - bed heater:
+            - use 3
