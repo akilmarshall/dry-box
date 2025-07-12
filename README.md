@@ -1,6 +1,6 @@
-<img src="schematic/v1.svg" alt="filament dry box v1 schematic"/>
+# Filament Dry Box
 
-# Components
+## Components
 
 - Intake Fan with Heater:
     - 12V DC (8.33A)
@@ -23,7 +23,7 @@
 - Power Supply AC to DC:
     - LRS 350 24
 
-# Control
+## Control
 
 
 The heat bed and fan heat and powered via relays and thus primary can be turned on or off.
@@ -33,6 +33,9 @@ The intake fan speed is controlled with half of an H-bridge and there for is con
 
 All of these devices are controlled together with a PID controller to control the interior temperature according to the enviroment sensor.
 
+## Schematic
+
+<img src="schematic/v1.svg" alt="filament dry box v1 schematic"/>
 
 # Wish List
 
@@ -44,6 +47,8 @@ All of these devices are controlled together with a PID controller to control th
 - hot bed temperature sensor
 - lid open/close sensor
 - insulated box
+- current/voltage monitoring:
+    - INA226
 
 ## Components
 
@@ -67,7 +72,25 @@ All of these devices are controlled together with a PID controller to control th
     - 500W
 - 12V to 24V Dc Dc Converter
 
-## Future Schematic
+## Schematic
 
-<img src="schematic/v2.svg" alt="filament dry box v1 schematic"/>
+<img src="schematic/v2.svg" alt="filament dry box v2 schematic"/>
 
+
+# V1.1
+
+A practical next step with components on hand, upgrading the capabilities of the dry box and allowing new control capabilites to be developed.
+
+## Components
+
+- INA219:
+    - use 2, for heat bed and fan heater
+    - limited by available address
+    - current sensor
+    - 1 per i2c bus
+    - configure address to 0x41
+- reed switch:
+    - lid position sensor
+- HTU21X:
+    - create second i2c bus
+    - external environmental sensor
