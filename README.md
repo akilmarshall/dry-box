@@ -107,3 +107,7 @@ A practical next step with components on hand, upgrading the capabilities of the
             - use 2
         - bed heater:
             - use 3
+- max31855:
+    - thermocouple amplifier
+    - heat bed temperature sensor
+    - type k
