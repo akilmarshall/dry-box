@@ -83,23 +83,25 @@ A practical next step with components on hand, upgrading the capabilities of the
 
 ## Components
 
-- INA219:
+- INA226:
     - limited by available address
     - current sensor
-    - 3 available addresses per i2c bus:
+    - place one on each ic2 bus
         - 0x41
         - 0x44
         - 0x45
     - monitor:
         - fan heater
         - bed heater
-        - fan
 - reed switch:
     - lid position sensor
 - HTU21X:
     - create second i2c bus
     - external environmental sensor
 - Use the existing L298N as a full H-bridge 
+- IRLB8721 30V/60A:
+    - N channel power MOSFET
+    - manufactorer says they can drive up to 15A without a heatsink 
 - TIP120 power Darlington transistor:
     - 5A collector current (8A peak)
     - use as a PWM power switch(https://www.allaboutcircuits.com/textbook/semiconductors/chpt-4/bjt-quirks/):
@@ -111,3 +113,6 @@ A practical next step with components on hand, upgrading the capabilities of the
     - thermocouple amplifier
     - heat bed temperature sensor
     - type k
+
+
+<img src="schematic/v1.1.svg" alt="filament dry box v1.1 schematic"/>
