@@ -39,16 +39,8 @@ All of these devices are controlled together with a PID controller to control th
 
 # Wish List
 
-- external environment sensor
-- power mosfets or suitable solid state device to control fan heat and bed heat with a pwm signal
 - second intake fan
-- use full H-bridge to control intake fan:
-    - bi-directional airflow control
-- hot bed temperature sensor
-- lid open/close sensor
 - insulated box
-- current/voltage monitoring:
-    - INA226
 
 ## Components
 
@@ -68,9 +60,7 @@ All of these devices are controlled together with a PID controller to control th
     - POWER: 260W
 - [N-channel power MOSFET](https://www.adafruit.com/product/355):
     - switch 30V/60A
-- ATX power supply:
-    - 500W
-- 12V to 24V Dc Dc Converter
+    - up to 15A without a heatsink 
 
 ## Schematic
 
@@ -101,14 +91,7 @@ A practical next step with components on hand, upgrading the capabilities of the
 - Use the existing L298N as a full H-bridge 
 - IRLB8721 30V/60A:
     - N channel power MOSFET
-    - manufactorer says they can drive up to 15A without a heatsink 
-- TIP120 power Darlington transistor:
-    - 5A collector current (8A peak)
-    - use as a PWM power switch(https://www.allaboutcircuits.com/textbook/semiconductors/chpt-4/bjt-quirks/):
-        - fan heater:
-            - use 2
-        - bed heater:
-            - use 3
+    - use 1 per heater
 - max31855:
     - thermocouple amplifier
     - heat bed temperature sensor
