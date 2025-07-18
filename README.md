@@ -74,23 +74,19 @@ A practical next step with components on hand, upgrading the capabilities of the
 ## Components
 
 - INA226:
-    - limited by available address
-    - current sensor
-    - place one on each ic2 bus
-        - 0x41
-        - 0x44
-        - 0x45
+    - DC current sensor
+    - place one on each i2c bus
     - monitor:
         - fan heater
         - bed heater
 - reed switch:
     - lid position sensor
 - HTU21X:
-    - create second i2c bus
+    - place on on each i2c bus
     - external environmental sensor
 - Use the existing L298N as a full H-bridge 
 - IRLB8721 30V/60A:
-    - N channel power MOSFET
+    - n channel power mosfet
     - use 1 per heater
 - max31855:
     - thermocouple amplifier
